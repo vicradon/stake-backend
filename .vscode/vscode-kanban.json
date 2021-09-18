@@ -1,0 +1,69 @@
+{
+  "todo": [
+    {
+      "assignedTo": {
+        "name": "Osinachi Chukwujama"
+      },
+      "category": "request",
+      "creation_time": "2021-05-30T20:33:23.146Z",
+      "description": {
+        "content": "A a sepate method in the UserController class for avatar upload",
+        "mime": "text/markdown"
+      },
+      "id": "3",
+      "prio": -4,
+      "references": [],
+      "title": "Add avatar upload user functionality"
+    },
+    {
+      "assignedTo": {
+        "name": "Osinachi Chukwujama"
+      },
+      "category": "models",
+      "creation_time": "2021-05-30T20:45:19.500Z",
+      "description": {
+        "content": "A a new model that belongs to the project model\nModel should have\n- status\n- student_id\n- content\n- ",
+        "mime": "text/markdown"
+      },
+      "id": "4",
+      "prio": -5,
+      "references": [],
+      "title": "Create chapter model"
+    }
+  ],
+  "in-progress": [
+    {
+      "assignedTo": {
+        "name": "Osinachi Chukwujama"
+      },
+      "category": "request",
+      "creation_time": "2021-05-30T20:31:09.989Z",
+      "description": {
+        "content": "When a user reproposes a project by updating it, the normal project creation notification should be sent \n",
+        "mime": "text/markdown"
+      },
+      "id": "2",
+      "prio": 4,
+      "references": [],
+      "title": "Add project update notification functionality"
+    }
+  ],
+  "testing": [
+    {
+      "assignedTo": {
+        "name": "Osinachi Chukwujama"
+      },
+      "category": "notification",
+      "creation_time": "2021-05-30T20:25:06.611Z",
+      "description": {
+        "content": "Notify the supervisor that a student has submited a project.",
+        "mime": "text/markdown"
+      },
+      "id": "1",
+      "prio": 5,
+      "references": [],
+      "title": "Add project creation notification"
+    }
+  ],
+  "done": []
+}

@@ -1,0 +1,310 @@
+openapi: 3.0.1
+info:
+ title: untitled API
+ version: '220'
+paths:
+ /api/login:
+  post:
+   operationId: request_PQ4qimELPQ
+   summary: Returns a token for accessing protected resources
+   requestBody:
+    content:
+     application/json:
+      schema:
+       type: object
+       required:
+        - email
+        - password
+       properties:
+        email:
+         type: string
+        password:
+         type: string
+   responses:
+    '200':
+     content:
+      application/json:
+       schema:
+        type: object
+        required:
+         - access_token
+         - success
+         - token_type
+         - user
+        properties:
+         access_token:
+          type: string
+         success:
+          type: boolean
+         token_type:
+          type: string
+         user:
+          type: object
+          required:
+           - avatar_url
+           - created_at
+           - department
+           - email
+           - id
+           - name
+           - profile_id
+           - profile_type
+           - updated_at
+          properties:
+           name:
+            type: string
+           email:
+            type: string
+           department:
+            type: string
+           id:
+            type: number
+           profile_id:
+            type: number
+           profile_type:
+            type: string
+           created_at:
+            type: string
+           updated_at:
+            type: string
+           avatar_url:
+            type: string
+     description: ''
+    '401':
+     content:
+      application/json:
+       schema:
+        type: object
+        required:
+         - message
+        properties:
+         message:
+          type: string
+     description: ''
+    '422':
+     content:
+      application/json:
+       schema:
+        type: object
+        required:
+         - errors
+         - message
+        properties:
+         errors:
+          type: object
+          required:
+           - email
+          properties:
+           email:
+            type: array
+            items:
+             type: string
+         message:
+          type: string
+     description: ''
+  parameters: []
+ /api/register:
+  post:
+   operationId: request_x1zy9fpcPW
+   summary: >-
+    Adds a user to the database and returns a token for accessing protected
+    resources
+   requestBody:
+    content:
+     application/json:
+      schema:
+       type: object
+       required:
+        - department
+        - email
+        - first_name
+        - last_name
+        - password
+        - reg_number
+        - supervisor_category
+       properties:
+        first_name:
+         type: string
+        email:
+         type: string
+        reg_number:
+         type: number
+        supervisor_category:
+         type: string
+        department:
+         type: string
+        last_name:
+         type: string
+        password:
+         type: string
+   responses:
+    '201':
+     content:
+      application/json:
+       schema:
+        type: object
+        required:
+         - access_token
+         - success
+         - token_type
+         - user
+        properties:
+         access_token:
+          type: string
+         success:
+          type: boolean
+         token_type:
+          type: string
+         user:
+          type: object
+          required:
+           - avatar_url
+           - created_at
+           - email
+           - id
+           - name
+           - profile_id
+           - profile_type
+           - updated_at
+          properties:
+           name:
+            type: string
+           email:
+            type: string
+           id:
+            type: number
+           profile_id:
+            type: number
+           profile_type:
+            type: string
+           created_at:
+            type: string
+           updated_at:
+            type: string
+           avatar_url:
+            type: string
+     description: ''
+    '422':
+     content:
+      application/json:
+       schema:
+        type: object
+        required:
+         - errors
+         - message
+        properties:
+         errors:
+          type: object
+          required:
+           - email
+          properties:
+           email:
+            type: array
+            items:
+             type: string
+         message:
+          type: string
+     description: ''
+    '500':
+     content:
+      application/json:
+       schema:
+        type: object
+        required:
+         - exception
+         - file
+         - line
+         - message
+         - trace
+        properties:
+         trace:
+          type: array
+          items:
+           type: object
+           required:
+            - function
+           properties:
+            line:
+             type: number
+            function:
+             type: string
+            class:
+             type: string
+            file:
+             type: string
+            type:
+             type: string
+         line:
+          type: number
+         exception:
+          type: string
+         message:
+          type: string
+         file:
+          type: string
+     description: ''
+  parameters: []
+ /api/users:
+  get:
+   operationId: request_KFEKj2odrq
+   summary: Returns users of the application
+   responses:
+    '200':
+     content:
+      application/json:
+       schema:
+        type: object
+        required:
+         - data
+        properties:
+         data:
+          type: array
+          items:
+           type: object
+           required:
+            - avatar_url
+            - created_at
+            - email
+            - id
+            - name
+            - updated_at
+           properties:
+            name:
+             type: string
+            email:
+             type: string
+            department: {}
+            id:
+             type: number
+            profile_id: {}
+            profile_type: {}
+            created_at:
+             type: string
+            updated_at:
+             type: string
+            avatar_url: {}
+     description: ''
+    '422':
+     content:
+      application/json:
+       schema:
+        type: object
+        required:
+         - errors
+         - message
+        properties:
+         errors:
+          type: object
+          required:
+           - supervisor_category
+          properties:
+           supervisor_category:
+            type: array
+            items:
+             type: string
+         message:
+          type: string
+     description: ''
+  parameters: []
+components:
+ schemas: {}

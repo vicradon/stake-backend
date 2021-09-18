@@ -1,0 +1,76 @@
+###
+
+POST https://proflow.osinachi.me/api/register
+X-Requested-With: XMLHttpRequest
+content-type: application/json
+
+{
+    "email": "jon.doe42@gmail.com",
+    "password": "password",
+    "reg_number": "21183899286",
+    "first_name": "Jon",
+    "last_name": "Doe",
+    "role": "student",
+    "department": "Food Science"
+}
+
+###
+
+
+POST https://proflow.osinachi.me/api/login 
+X-Requested-With: XMLHttpRequest
+content-type: application/json
+
+{
+    "email": "alvanachonwa@gmail.com",
+    "password": "12345678"
+}
+
+
+###
+
+
+POST https://proflow.osinachi.me/api/supervisor/register
+X-Requested-With: XMLHttpRequest
+Authorization: Bearer 3|Fbw6Mvy58kQx6wUwz5Si8a8Y0IHynmNXfYzUZK8D
+content-type: application/json
+
+{
+    "project_category": "Communication",
+    "name": "Dr Meriko Salman",
+    "email": "meriko.salman6@email.net",
+    "department": "Mechnig"
+}
+
+###
+
+GET  https://proflow.osinachi.me/api/chapters/?student_id=1
+X-Requested-With: XMLHttpRequest
+Authorization: Bearer 13|GkJY3Gz4hET2OSyZU3xIt9U0XlghIo9bZHdtvRwM
+
+
+###
+POST  https://proflow.osinachi.me/api/comments?chapter_id=6&student_id=1
+X-Requested-With: XMLHttpRequest
+Authorization: Bearer 7|YIo0gnoRuwCRYsES2LSg6d71M3aFdMX1MucodWfG
+content-type: application/json
+
+{
+    "comment_text": "This is not nice",
+    "page_number": 4
+}
+
+###
+
+GET https://proflow.osinachi.me/api/stuff
+X-Requested-With: XMLHttpRequest
+
+###
+POST   https://proflow.osinachi.me/api/pdf
+X-Requested-With: XMLHttpRequest
+Authorization: Bearer 4|3FtzU7C63FCFYKmz6TEW6lq6eSUu8Zd3cZmgOveP
+content-type: application/json
+
+{
+    "url": "https://proflow.osinachi.me/storage/project_pdfs/ypvo9971XJssN3aqkzP5azZHgjjIO25wRfipucEX.pdf"
+}
